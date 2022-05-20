@@ -1,0 +1,83 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class magazine{
+	private:
+		char Magazine_ID[10];
+		char Magazine_Name[20];
+		char Magazine_Description[100];
+		double price;
+	public:
+		Magazine(char Magazine_ID, char Magazine_Name, char Magazine_Description, double price);
+		void getMagazine_Details();
+		void updateMagazineDetails(char Magazine_ID, char Magazine_Name, char Magazine_Description, double price);
+};
+
+
+class Delivery_Staff{
+	private:
+		char DS_ID[10];
+		char name[20];
+		char staff_type[10];
+		int Contact_Number;
+		char Email_Address[50];
+	public:
+		Delivery_Staff(char ID,char N,char s_type,int C_Num,char E_Address);
+		void Delivery_Staff::getDetails();
+};
+
+
+Magazine::Magazine(char M_ID, string M_Name,  string M_ Des, float Price)
+{
+	strcpy(Magazine_ID, M_ID);
+	strcpy(Magazine_Name, M_Name);
+	strcpy(Magazine_ Description, M_ Des);
+	Price= Price;  
+}
+
+void Magazine::getMagazineDetails()
+{
+	cout<<"Magazine ID : "<<Magazine_ID<<endl;
+	cout<<"Name : "<<Magazine_Name<<endl;
+	cout<<"Description : "<<Magazine_Description<<endl;
+	cout<<"Price : "<<Price<<endl;
+}
+
+void Magazine::updateMagazineDetails(char M_ID, string M_Name,  string M_ Des, float Price)
+{
+	strcpy(Magazine_ID, M_ID);
+	strcpy(Magazine_Name, M_Name);
+	strcpy(Magazine_ Description, M_ Des);
+	Price= Price;  
+}
+
+
+Delivery_Staff::Delivery_Staff(char ID,char N,char s_type,int C_Num,char E_Address)  
+{
+	DS_ID=ID ;
+	Name= Name;
+	staff_type= s_type;
+	Contact_Number= C_Num;
+	Email_Address= E_Address;
+	
+}
+
+void Delivery_Staff::getDetails()
+{
+	cout<<"Delivery Staff ID : "<<DS_ID<<endl;
+	cout<<"Name : "<<Name<<endl;
+	cout<<"Staff Type : "<<Staff_Type<<endl;
+	cout<<"Contact Number : "<<Contact_Number<<endl;
+	cout<<"Email Address : "<<Email_Address<<endl;
+}
+
+void Delivery_Staff::updateDetails(char ID,char N,char s_type,int C_Num,char E_Address)  
+{
+	DS_ID = ID;
+	Name= N;
+	staff_type= s_type;
+	Contact_Number= C_Num;
+	Email_Address= E_Address;
+	
+}
