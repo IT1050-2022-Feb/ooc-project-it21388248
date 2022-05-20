@@ -1,0 +1,67 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class Feedback{
+	private:
+		char feedback_ID;
+		char Date;
+		char feedback_msg;
+		
+
+	public:
+	Feedback(char *id,char *dat,char *feed);
+	void displayFeedback();
+
+
+};
+
+Feedback::Feedback(char *id,char *dat,char *feed)
+{
+	strcpy(feedback_ID,id);
+	strcpy(Date,dat);
+	strcpy(feedback_msg,feed);
+}
+
+void Feedback::displayFeedback()
+{
+	cout<<"Feedback Id : "<< feedback_ID <<endl;
+	cout<<"Date : "<< Date <<endl;
+	cout<<"Feedback : "<< feedback_msg <<endl;
+}
+
+
+
+class Report
+{
+	private: 
+		
+
+	public:
+		void generateOrderReport();
+		void displayCategoryDetails();
+		void generatePaymentReport();
+		void displayPaymentReport();
+
+};
+
+
+void Report::generateOrderReport()
+{
+	
+}
+
+void Report::displayCategoryDetails()
+{
+	
+}
+
+void Report::generatePaymentReport()
+{
+	
+}
+
+void Report::displayPaymentReport()
+{
+	
+}
