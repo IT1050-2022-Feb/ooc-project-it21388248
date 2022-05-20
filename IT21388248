@@ -8,8 +8,7 @@ class Unregistered_User{
     char Email_Address[20];
 
 public:
-
-void setUserDetails(char *UName,char *Email); 
+	void setUserDetails(char *UName,char *Email); 
 };
 
 void Unregistered_User::setUserDetails(char *UName,char *Email)
@@ -19,7 +18,6 @@ void Unregistered_User::setUserDetails(char *UName,char *Email)
 }
 
 class Registered_User : public Unregistered_User
-
 {
 protected: 
     char User_ID[10];
@@ -29,12 +27,11 @@ protected:
     int Contact_Number;  
 
 public:
-   void setUserDetails(char *ID,char *pwd, char *bday ,int zip,int num);
-   void getUserDetails();
-      
+   Registered_User(char *ID,char *pwd, char *bday ,int zip,int num);
+   void getUserDetails();  
 };
 
-void Registered_User::setUserDetails(char *ID,char *pwd, char *bday ,int zip,int num)
+Registered_User::Registered_User(char *ID,char *pwd, char *bday ,int zip,int num)
 {
   strcpy(User_ID,ID);
   strcpy(password,pwd);
@@ -48,7 +45,7 @@ void Registered_User::getUserDetails()
    cout<<"User ID : "<<User_ID<<endl;
    cout<<"password : "<<password<<endl;
    cout<<"DOB : "<<DOB<<endl;
-   cout<<" ZIP_Code : "<< ZIP_Code<<endl;
+   cout<<"ZIP_Code : "<< ZIP_Code<<endl;
    cout<<"Contact_Number : "<<Contact_Number<<endl;
   
 }
@@ -62,80 +59,18 @@ protected:
 
 public:
 
-   void setAdminDetails(char *A_ID,char *A_pwd);
+   Admin(char *A_ID,char *A_pwd);
    void getAdminDetails();
-  };
+};
 
-void::Admin setAdminDetails(char *A_ID,char *A_pwd)
+Admin::Admin(char *A_ID,char *A_pwd)
 {
   strcpy(Admin_ID,A_ID);
-  strcpy( Password,A_pwd);
+  strcpy(Password,A_pwd);
 }
 
-void :: Admin getAdminDetails()
+void Admin::getAdminDetails()
 {
   cout<<"Admin ID : "<<Admin_ID<<endl;
-  cout<<"Admin Password : "<<password<<endl;
+  cout<<"Admin Ipassword : "<<password<<endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
