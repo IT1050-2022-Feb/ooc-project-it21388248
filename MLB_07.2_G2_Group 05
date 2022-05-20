@@ -9,6 +9,26 @@ int main()
   Admin* a1;
   a1 = new Admin("a10", "ipufdihds")
   a1->getAdminDetails("00A1","774#e");
+  
+  Feedback* fee;
+	fee = new Feedback("DE005","2022/05/20","Good");
+	fee->displayFeedback();
+	
+	Report* rep;
+	rep = new Report;
+	rep->generateOrderReport();
+	rep->displayCategoryDetails();
+	rep->generatePaymentReport();
+	rep->displayPaymentReport();
+  
+  Book* bo;
+	bo = new Book("A0001","Potter","Charls","ctg001","XXXXXXXXXXXXX",580.00);
+	bo->getBookDetails();
+	bo->updateBookDetails("B0005","Chap","Martin","ctg005","XXXXXXXXXXXXX",620.00);
+	
+	Category* ctg;
+	ctg = new Category("ctg003","Crime");
+	ctg->getCategoryDetails();
 
   return 0;
   
