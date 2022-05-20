@@ -25,6 +25,7 @@ class Delivery_Staff{
 	public:
 		Delivery_Staff(char ID,char N,char s_type,int C_Num,char E_Address);
 		void Delivery_Staff::getDetails();
+		void updateDetails(char ID,char N,char s_type,int C_Num,char E_Address);
 };
 
 
