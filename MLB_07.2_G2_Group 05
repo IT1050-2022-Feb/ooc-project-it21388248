@@ -1,18 +1,64 @@
-int main()
-{
+#include <iostream>
+#include <cstring>
+#include "Unregistered_User.h"
+#include "Registered_User.h"
+#include "Admin.h"
+#include "Book.h"
+#include "Magazine.h"
+#include "Category.h"
+#include "Order.h"
+#include "Payment.h"
+#include "Delivery_Staff.h"
+#include "Report.h"
+#include "Feedback.h"
+using namespace std;
 
-  Registered_User* r1;
-  r1 = new Registered_User("001","abc56","2001.06.23",10500,0776542876);
-  r1->setUserDetails( "Ann", "annfernando@gmail.com");
-  r1->getUserDetails();
-  
-  Admin* a1;
-  a1 = new Admin("a10", "ipufdihds")
-  a1->getAdminDetails("00A1","774#e");
-  
-  Feedback* fee;
-	fee = new Feedback("DE005","2022/05/20","Good");
-	fee->displayFeedback();
+int main(){
+	Unregistered_User* unreg;
+	unreg = new Unregistered_User;
+	unreg-> setUserDetails("Supun Perera", "supunp@gmail.com");
+	
+	Registered_User* r1;
+	r1 = new Registered_User("001","abc56","2001.06.23",10500,0776542876);
+	r1->setUserDetails( "Ann", "annfernando@gmail.com");
+	r1->getUserDetails();
+	
+	Admin* a1;
+	a1 = new Admin("a10", "ipufdihds");
+	a1->getAdminDetails("00A1","774#e");
+	
+	Book* b1;
+	b1 = new Book("A0001","Potter","Charls","ctg001","XXXXXXXXXXXXX",580.00);
+	b1->getBookDetails();
+	b1->updateBookDetails("B0005","Chap","Martin","ctg005","XXXXXXXXXXXXX",620.00);
+	
+	Magazine* m1;
+	m1 = new Magzine("m10023","Monthly Mail","xxxxxxxxxx", 18.50);
+	m1->getMagazineDetails();
+	m1->updateMagazineDetails("m100030","Weekly Mail","xxxxxxxxxx", 7.50);
+	
+	Category* ctg;
+	ctg = new Category("ctg003","Crime");
+	ctg->getCategoryDetails();
+	
+	Order* odr1;
+	odr1 = new Order("odr124000", 3, 15.00);
+	odr->calcPrice();
+	odr->displayBill();
+	odr->confirmOrder();
+	
+	Payment* p1;
+	p1 = new Payment("p1409900", "Visa", "2002697548657");
+	p1->confirmPayment();
+	
+	Delivery_Staff* ds1;
+	ds1 = new Delivery_Staff("ds075","Jagath Chandana", "Driver", 0756849587, "jagathc@gmail.com");
+	ds1->getDetails();
+	ds1->updateDetails("ds068","Upul Bandara", "Driver", 0721358998, "bundara@gmail.com");
+	
+	Feedback* f1;
+	f1 = new Feedback("DE005","2022/05/20","Good");
+	f1->displayFeedback();
 	
 	Report* rep;
 	rep = new Report;
@@ -20,16 +66,6 @@ int main()
 	rep->displayCategoryDetails();
 	rep->generatePaymentReport();
 	rep->displayPaymentReport();
-  
-  Book* bo;
-	bo = new Book("A0001","Potter","Charls","ctg001","XXXXXXXXXXXXX",580.00);
-	bo->getBookDetails();
-	bo->updateBookDetails("B0005","Chap","Martin","ctg005","XXXXXXXXXXXXX",620.00);
 	
-	Category* ctg;
-	ctg = new Category("ctg003","Crime");
-	ctg->getCategoryDetails();
-
-  return 0;
-  
+	
 }
